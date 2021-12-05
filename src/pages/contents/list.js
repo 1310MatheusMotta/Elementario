@@ -58,7 +58,7 @@ export default function InApp(){
                   <View style={styles.itemList}>
                     <Text>Aluno: {alunos.nome_alu}</Text>
                     <Text>Disciplina: {alunos.nome_dis}</Text>
-                    <Text>Notas registradas: {alunos.valor}</Text>
+                    <Text>Nota registrada: {alunos.valor}</Text>
                     <Text>Média final registrada: {alunos.media}</Text>
                     
                     
