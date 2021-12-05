@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../../styles/styles_content";
 import conn from "../../services/connection";
 import { useState, useEffect } from "react";
-import {View, Text, TouchableOpacity, FlatList, ImageBackground, TextInput, Image} from "react-native";
+import {View, Text, FlatList, ImageBackground, TextInput} from "react-native";
 import { useNavigation } from "@react-navigation/core";
 
 
@@ -57,8 +57,7 @@ export default function InApp(){
 
                   <View style={styles.itemList}>
                     <Text>Aluno: {alunos.nome_alu}</Text>
-                    <Text>Disciplina: {alunos.nome_dis}</Text>
-                    <Text>Nota registrada: {alunos.valor}</Text>
+                    {/* <Text>Disciplina: {alunos.nome_dis}</Text> */}
                     <Text>Média final registrada: {alunos.media}</Text>
                     
                     

@@ -26,17 +26,16 @@ module.exports = {
         }
     },
 
-    async searchNotas(req, res){ //filtro alunos
+    async searchNotas(req, res){ 
         try {
              const { nome_alu } = req.params;    
             // console.log(nome_alu);
              if( nome_alu != undefined){
 
                 const result = await knex('alunos')
-                .join('nota', 'nota.id_aluno', '=', 'alunos.id_alu')
-                .join('disciplinas', 'disciplinas.codigo_dis', '=', 'nota.disciplina')
+                
                 .join('aprovados', 'aprovados.id_aluno', '=', 'alunos.id_alu')
-                .select('alunos.id_alu', 'alunos.nome_alu', 'nota.valor', 'nota.disciplina', 'nota.id_avaliacao', 'disciplinas.nome_dis', 'aprovados.media')
+                .select('alunos.id_alu', 'alunos.nome_alu', 'aprovados.media')
                 .where('nome_alu', 'like', '%' + nome_alu + '%');
     
                 return res.json(result);
